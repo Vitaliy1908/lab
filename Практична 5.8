@@ -1,0 +1,84 @@
+1)public class Main {
+    public static void main(String[] args) {
+        int n = 120;
+        if (n > 50 && n < 100) {
+            System.out.println("Число " + n + " міститься в проміжку (50; 100)");
+        } else {
+            System.out.println("Число " + n + " не міститься в проміжку (50; 100)");
+        }
+    }
+}
+
+2)public class Main {
+    public static void main(String[] args) {
+        int n = 654;
+        int maxDigit = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            if (digit > maxDigit) {
+                maxDigit = digit;
+            }
+            n /= 10;
+        }
+        System.out.println("Найбільша цифра: " + maxDigit);
+    }
+}
+
+3)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int currentFloor = 1;
+        int destinationFloor;
+
+        while (true) {
+            System.out.print("Введіть номер поверху (1-9): ");
+            destinationFloor = scanner.nextInt();
+
+            if (destinationFloor == 2) {
+                System.out.println("Кнопка 2-го поверху не працює!");
+                continue;
+            }
+
+            if (destinationFloor > currentFloor) {
+                System.out.println("Ви піднялись на " + destinationFloor + " поверх");
+            } else if (destinationFloor < currentFloor) {
+                System.out.println("Ви спустились на " + destinationFloor + " поверх");
+            } else {
+                System.out.println("Ви зараз на " + currentFloor + " поверсі");
+            }
+
+            currentFloor = destinationFloor;
+        }
+    }
+}
+
+4)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Погоджуєтесь чи відмовляєтесь?");
+        String option = scanner.nextLine().toLowerCase();
+
+        switch (option) {
+            case "так":
+            case "ок":
+            case "yes":
+            case "y":
+            case "+":
+            case "ok":
+                System.out.println("Я погоджуюсь!");
+                break;
+            case "ні":
+            case "no":
+            case "n":
+            case "-":
+                System.out.println("Я відмовляюсь!");
+                break;
+            default:
+                System.out.println("Невідома опція!");
+        }
+    }
+}
