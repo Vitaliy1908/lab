@@ -1,0 +1,77 @@
+1)public class Main {
+    public static void main(String[] args) {
+        // Використання оператора циклу for
+        for (int i = 500; i <= 650; i += 10) {
+            System.out.println(i);
+        }
+        
+        // Використання оператора циклу while
+        int j = 500;
+        while (j <= 650) {
+            System.out.println(j);
+            j += 10;
+        }
+        
+        // Використання оператора циклу do-while
+        int k = 500;
+        do {
+            System.out.println(k);
+            k += 10;
+        } while (k <= 650);
+    }
+}
+
+2)public class Main {
+    public static void main(String[] args) {
+        int a = 2;
+        while (a * 2 - 1 < 5000) {
+            System.out.println(a * 2 - 1);
+            a++;
+        }
+    }
+}
+
+3)public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
+
+4)public class Main {
+    public static void main(String[] args) {
+        int n = 10;
+        int factorial = 1;
+        int i = 1;
+        
+        while (i <= n) {
+            factorial *= i;
+            i++;
+        }
+        
+        System.out.println("Факторіал числа " + n + " дорівнює " + factorial);
+    }
+}
+
+5)public class Main {
+    public static void main(String[] args) {
+        int count = 0;
+        for (int hour = 0; hour <= 23; hour++) {
+            for (int minute = 0; minute <= 59; minute++) {
+                // перетворюємо числа годин і хвилин на рядки та додаємо нулі перед однозначними числами
+                String hourStr = String.format("%02d", hour);
+                String minuteStr = String.format("%02d", minute);
+                
+                // перевіряємо, чи є комбінація симетричною
+                if (hourStr.charAt(0) == minuteStr.charAt(1) && hourStr.charAt(1) == minuteStr.charAt(0)) {
+                    count++;
+                }
+            }
+        }
+        System.out.println("Кількість симетричних комбінацій: " + count);
+    }
+}
