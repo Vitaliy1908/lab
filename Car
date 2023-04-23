@@ -1,0 +1,22 @@
+ public class Car {
+    String make;
+    String model;
+    int year;
+    float fuelEfficiency;
+
+    public Car(String make, String model, int year, float fuelEfficiency) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelEfficiency = fuelEfficiency;
+    }
+
+    public static void main(String[] args) {
+        // Код, який буде виконуватись при запуску програми
+        Car car = new Car("Toyota", "Camry", 2021, 8.9f);
+        System.out.println("Make: " + car.make);
+        System.out.println("Model: " + car.model);
+        System.out.println("Year: " + car.year);
+        System.out.println("Fuel Efficiency: " + car.fuelEfficiency);
+    }
+}
