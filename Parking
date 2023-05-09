@@ -1,0 +1,70 @@
+public class Parking {
+    String name;
+    int capacity;
+    int occupied;
+    
+    public Parking(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+        this.occupied = 0;
+    }
+    
+    public void park() {
+        if (occupied < capacity) {
+            occupied++;
+            System.out.println("Car parked. Available spaces: " + (capacity - occupied));
+        } else {
+            System.out.println("Parking is full. Cannot park car.");
+        }
+    }
+    
+    public void unpark() {
+        if (occupied > 0) {
+            occupied--;
+            System.out.println("Car unparked. Available spaces: " + (capacity - occupied));
+        } else {
+            System.out.println("Parking is empty. Cannot unpark car.");
+        }
+    }
+    
+    public void printInfo() {
+        System.out.println("Parking name: " + name);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Occupied: " + occupied);
+    }
+}
+public class Parking {
+    String name;
+    int capacity;
+    int occupied;
+    
+    public Parking(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+        this.occupied = 0;
+    }
+    
+    public void park() {
+        if (occupied < capacity) {
+            occupied++;
+            System.out.println("Car parked. Available spaces: " + (capacity - occupied));
+        } else {
+            System.out.println("Parking is full. Cannot park car.");
+        }
+    }
+    
+    public void unpark() {
+        if (occupied > 0) {
+            occupied--;
+            System.out.println("Car unparked. Available spaces: " + (capacity - occupied));
+        } else {
+            System.out.println("Parking is empty. Cannot unpark car.");
+        }
+    }
+    
+    public void printInfo() {
+        System.out.println("Parking name: " + name);
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Occupied: " + occupied);
+    }
+}
