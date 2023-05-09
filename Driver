@@ -1,0 +1,19 @@
+public class Driver {
+    public String name;
+    public int age;
+    public int experience;
+    
+    // Конструктор
+    public Driver(String name, int age, int experience) {
+        this.name = name;
+        this.age = age;
+        this.experience = experience;
+    }
+    
+    // Метод для виведення інформації про водія
+    public void printInfo() {
+        System.out.println("Driver Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Experience: " + experience + " years");
+    }
+}
