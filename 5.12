@@ -1,0 +1,128 @@
+1)public class Main {
+    public static void main(String[] args) {
+        int size = 50; // Розмір масиву - 50 елементів (непарних чисел від 1 до 99)
+        int[] array = new int[size];
+
+        int number = 1;
+        for (int i = 0; i < size; i++) {
+            array[i] = number;
+            number += 2; // Збільшуємо число на 2, щоб перейти до наступного непарного числа
+        }
+
+        for (int i = 0; i < size; i++) {
+            System.out.println(array[i]);
+        }
+    }
+}
+
+2)import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        int size = 20; // Розмір масиву - 20 елементів
+        int[] array = new int[size];
+
+        // Заповнюємо масив випадковими числами від 0 до 9
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(10);
+        }
+
+        System.out.println("Початковий масив:");
+        System.out.println(Arrays.toString(array));
+
+        // Замінюємо елементи з непарним індексом на нуль
+        for (int i = 1; i < size; i += 2) {
+            array[i] = 0;
+        }
+
+        System.out.println("Оновлений масив:");
+        System.out.println(Arrays.toString(array));
+    }
+}
+
+3)import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        int size = 5; // Розмір масиву - 5 елементів
+
+        // Створюємо три масиви
+        int[] array1 = new int[size];
+        int[] array2 = new int[size];
+        int[] array3 = new int[size];
+
+        // Заповнюємо масиви випадковими числами від 0 до 5
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            array1[i] = random.nextInt(6);
+            array2[i] = random.nextInt(6);
+            array3[i] = random.nextInt(6);
+        }
+
+        // Виводимо масиви у консоль
+        System.out.println("Масив 1: " + Arrays.toString(array1));
+        System.out.println("Масив 2: " + Arrays.toString(array2));
+        System.out.println("Масив 3: " + Arrays.toString(array3));
+
+        // Обчислюємо середнє арифметичне елементів кожного масиву
+        double average1 = calculateAverage(array1);
+        double average2 = calculateAverage(array2);
+        double average3 = calculateAverage(array3);
+
+        // Порівнюємо середні арифметичні значення
+        if (average1 > average2 && average1 > average3) {
+            System.out.println("Середнє значення масиву 1 є більшим.");
+        } else if (average2 > average1 && average2 > average3) {
+            System.out.println("Середнє значення масиву 2 є більшим.");
+        } else if (average3 > average1 && average3 > average2) {
+            System.out.println("Середнє значення масиву 3 є більшим.");
+        } else {
+            System.out.println("Середні значення масивів рівні.");
+        }
+    }
+
+    // Метод для обчислення середнього арифметичного масиву
+    public static double calculateAverage(int[] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return (double) sum / array.length;
+    }
+}
+
+4)import java.util.Arrays;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        int size = 10; // Розмір масивів - 10 елементів
+
+        // Створюємо два масиви
+        int[] array1 = new int[size];
+        int[] array2 = new int[size];
+
+        // Заповнюємо масиви випадковими числами від 0 до 10
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            array1[i] = random.nextInt(11);
+            array2[i] = random.nextInt(11);
+        }
+
+        // Створюємо третій масив
+        int[] array3 = new int[size];
+
+        // Заповнюємо третій масив сумою елементів перших двох масивів з відповідними індексами
+        for (int i = 0; i < size; i++) {
+            array3[i] = array1[i] + array2[i];
+        }
+
+        // Виводимо всі масиви у консоль
+        System.out.println("Масив 1: " + Arrays.toString(array1));
+        System.out.println("Масив 2: " + Arrays.toString(array2));
+        System.out.println("Масив 3 (сума елементів): " + Arrays.toString(array3));
+    }
+}
