@@ -1,0 +1,121 @@
+1)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введіть п'ять окремих слів:");
+
+        // Отримуємо введені користувачем слова
+        String word1 = scanner.next();
+        String word2 = scanner.next();
+        String word3 = scanner.next();
+        String word4 = scanner.next();
+        String word5 = scanner.next();
+
+        // Складаємо речення за допомогою методу concat()
+        String sentence = word1.concat(" ").concat(word2).concat(" ").concat(word3).concat(" ").concat(word4).concat(" ").concat(word5);
+
+        System.out.println("Складене речення: " + sentence);
+    }
+}
+
+
+2)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введіть п'ять слов:");
+
+        // Отримуємо введені користувачем слова
+        String word1 = scanner.next();
+        String word2 = scanner.next();
+        String word3 = scanner.next();
+        String word4 = scanner.next();
+        String word5 = scanner.next();
+
+        // Визначаємо першу літеру кожного слова за допомогою методу substring()
+        String firstLetter1 = word1.substring(0, 1);
+        String firstLetter2 = word2.substring(0, 1);
+        String firstLetter3 = word3.substring(0, 1);
+        String firstLetter4 = word4.substring(0, 1);
+        String firstLetter5 = word5.substring(0, 1);
+
+        // Виводимо перші літери слів на екран
+        System.out.println("Перша літера першого слова: " + firstLetter1);
+        System.out.println("Перша літера другого слова: " + firstLetter2);
+        System.out.println("Перша літера третього слова: " + firstLetter3);
+        System.out.println("Перша літера четвертого слова:"+ firstLetter4);
+        
+        3)import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введіть три числа:");
+
+        // Отримуємо введені користувачем числа
+        double number1 = readDouble(scanner, "Перше число: ");
+        double number2 = readDouble(scanner, "Друге число: ");
+        double number3 = readDouble(scanner, "Третє число: ");
+
+        // Порівнюємо числа і виводимо повідомлення про більше дробове число
+        if (number1 > number2 && number1 > number3) {
+            System.out.println("Перше число є найбільшим дробовим числом.");
+        } else if (number2 > number1 && number2 > number3) {
+            System.out.println("Друге число є найбільшим дробовим числом.");
+        } else if (number3 > number1 && number3 > number2) {
+            System.out.println("Третє число є найбільшим дробовим числом.");
+        } else {
+            System.out.println("Введені числа рівні або не є дробовими.");
+        }
+    }
+
+    // Метод для зчитування дробового числа з перевіркою правильності введення
+    private static double readDouble(Scanner scanner, String prompt) {
+        double number = 0;
+        boolean isValid = false;
+
+        do {
+            System.out.print(prompt);
+            if (scanner.hasNextDouble()) {
+                number = scanner.nextDouble();
+                isValid = true;
+            } else {
+                String input = scanner.next();
+                System.out.println("Помилка! '" + input + "' не є дробовим числом. Спробуйте ще раз.");
+            }
+        } while (!isValid);
+
+        return number;
+    }
+}
+
+4)     import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введіть перше ім'я: ");
+        String firstName = scanner.nextLine();
+
+        System.out.print("Введіть друге ім'я: ");
+        String secondName = scanner.nextLine();
+
+        // Перевіряємо ідентичність імен без урахування регістру
+        boolean areEqual = firstName.equalsIgnoreCase(secondName);
+
+        // Виводимо результат перевірки на екран
+        if (areEqual) {
+            System.out.println("Імена ідентичні без урахування регістру.");
+        } else {
+            System.out.println("Імена не є ідентичними без урахування регістру.");
+        }
+    }
+}
+  
+
