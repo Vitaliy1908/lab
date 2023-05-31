@@ -1,0 +1,223 @@
+public class One {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public One(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        System.out.println("voidMethod в класі One");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public int typedMethod(double param) {
+        int result = (int) (variable1 * variable2 + variable3 + param);
+        return result;
+    }
+
+    public void otherClassMethod(Two otherInstance) {
+        System.out.println("Виклик otherClassMethod з класу One для екземпляра класу Two");
+        System.out.println("Значення змінної variable1 у екземпляра класу Two: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(String... args) {
+        System.out.println("dynamicArgumentsMethod в класі One");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+
+    public void overriddenMethod(double param) {
+        System.out.println("Перевизначений метод overriddenMethod в класі One");
+        System.out.println("Параметр: " + param);
+    }
+
+    public static void staticMethod() {
+        System.out.println("Статичний метод staticMethod в класі One");
+        System.out.println("Це унікальний метод для класу One");
+    }
+}
+
+public class Two {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public Two(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        System.out.println("voidMethod в класі Two");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public int typedMethod(double param) {
+        int result = (int) (variable1 * variable2 + variable3 + param);
+        return result;
+    }
+
+    public void otherClassMethod(Three otherInstance) {
+        System.out.println("Виклик otherClassMethod з класу Two для екземпляра класу Three");
+        System.out.println("Значення змінної variable1 у екземпляра класу Three: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(int... args) {
+        System.out.println("dynamicArgumentsMethod в класі Two");
+        for (int arg : args) {
+            System.out.println(arg);
+        }
+    }
+
+    public void overriddenMethod(double param) {
+        System.out.println("Перевизначений метод overriddenMethod в класі Two");
+        System.out.println("Параметр: " + param);
+    }
+
+    public static void staticMethod() {
+        System.out.println("Статичний метод staticMethod в класі Two");
+        System.out.println("Це унікальний метод для класу Two");
+    }
+}
+
+
+public class Three {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public Three(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        System.out.println("voidMethod в класі Three");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public int typedMethod(double param) {
+        int result = (int) (variable1 * variable2 + variable3 + param);
+        return result;
+    }
+
+    public void otherClassMethod(One otherInstance) {
+        System.out.println("Виклик otherClassMethod з класу Three для екземпляра класу One");
+        System.out.println("Значення змінної variable1 у екземпляра класу One: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(String... args) {
+        System.out.println("dynamicArgumentsMethod в класі Three");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+
+    public void overriddenMethod(double param) {
+        System.out.println("Перевизначений метод overriddenMethod в класі Three");
+        System.out.println("Параметр: " + param);
+    }
+
+    public static void staticMethod() {
+        System.out.println("Статичний метод staticMethod в класі Three");
+        System.out.println("Це унікальний метод для класу Three");
+    }
+}
+
+3)public class MainClass {
+    public static void main(String[] args) {
+        One one = new One(1.5, 2, 3.7);
+        Two two = new Two(2.3, 4, 1.2);
+        Three three = new Three(3.1, 5, 2.8);
+
+        // Виклик перевизначеного методу overriddenMethod
+        one.overriddenMethod(2.0);
+        two.overriddenMethod(3.5);
+        three.overriddenMethod(4.8);
+
+        // Виклик статичного методу staticMethod
+        One.staticMethod();
+        Two.staticMethod();
+        Three.staticMethod();
+    }
+}
+
+4)public class One {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public One() {
+        // Конструктор без параметрів
+        variable1 = 0.0;
+        variable2 = 0;
+        variable3 = 0.0;
+    }
+
+    public One(double variable1) {
+        // Конструктор з одним параметром
+        this.variable1 = variable1;
+        variable2 = 0;
+        variable3 = 0.0;
+    }
+
+    public One(double variable1, int variable2) {
+        // Конструктор з двома параметрами
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        variable3 = 0.0;
+    }
+
+    public One(double variable1, int variable2, double variable3) {
+        // Конструктор з трьома параметрами
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        // Створення екземплярів класу One з різними варіантами ініціалізації
+        One one1 = new One();
+        One one2 = new One(1.5);
+        One one3 = new One(2.3, 4);
+        One one4 = new One(3.1, 5, 2.8);
+
+        // Виведення значень змінних екземплярів класу One
+        System.out.println("Значення змінних екземпляра one1:");
+        System.out.println("variable1: " + one1.getVariable1());
+        System.out.println("variable2: " + one1.getVariable2());
+        System.out.println("variable3: " + one1.getVariable3());
+
+        System.out.println("Значення змінних екземпляра one2:");
+        System.out.println("variable1: " + one2.getVariable1());
+        System.out.println("variable2: " + one2.getVariable2());
+        System.out.println("variable3: " + one2.getVariable3());
+
+        System.out.println("Значення змінних екземпляра one3:");
+        System.out.println("variable1: " + one3.getVariable1());
+        System.out.println("variable2: " + one3.getVariable2());
+        System.out.println("variable3: " + one3.getVariable3());
+
+        System.out.println("Значення змінних екземпляра one4:");
+        System.out.println("variable1: " + one4.getVariable1());
+        System.out.println("variable2: " + one4.getVariable2());
+        System.out.println("variable3: " + one4.getVariable3());
+    }
+}
