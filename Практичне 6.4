@@ -1,0 +1,181 @@
+
+1)public class One {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public One(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        // Використання значень змінних екземпляра
+        System.out.println("voidMethod в класі One:");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public double typedMethod(int param) {
+        // Використання значень змінних екземпляра та параметрів
+        double result = variable1 * variable2 + variable3 + param;
+        return result;
+    }
+
+    public void otherClassMethod(Two otherInstance) {
+        // Використання екземпляра іншого класу
+        System.out.println("Використання екземпляра класу Two в методі otherClassMethod класу One:");
+        System.out.println("Значення змінної variable1 у екземпляра класу Two: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(String... args) {
+        // Використання параметрів динамічної довжини
+        System.out.println("dynamicArgumentsMethod в класі One:");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+
+public class Two {
+    private int variable1;
+    private double variable2;
+    private int variable3;
+
+    public Two(int variable1, double variable2, int variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        // Використання значень змінних екземпляра
+        System.out.println("voidMethod в класі Two:");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public int typedMethod(double param) {
+        // Використання значень змінних екземпляра та параметрів
+        int result = (int) (variable1 * variable2 + variable3 + param);
+        return result;
+    }
+
+    public void otherClassMethod(Three otherInstance) {
+        // Використання екземпляра іншого класу
+        System.out.println("Використання екземпляра класу Three в методі otherClassMethod класу Two:");
+        System.out.println("Значення змінної variable1 у екземпляра класу Three: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(int... args) {
+        // Використання параметрів динамічної довжини
+        System.out.println("dynamicArgumentsMethod в класі Two:");
+        for (int arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+
+public class Three {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public Three(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    public void voidMethod() {
+        // Використання значень змінних екземпляра
+        System.out.println("voidMethod в класі Three:");
+        System.out.println("variable1: " + variable1);
+        System.out.println("variable2: " + variable2);
+        System.out.println("variable3: " + variable3);
+    }
+
+    public int typedMethod(double param) {
+        // Використання значень змінних екземпляра та параметрів
+        int result = (int) (variable1 * variable2 + variable3 + param);
+        return result;
+    }
+
+    public void otherClassMethod(One otherInstance) {
+        // Використання екземпляра іншого класу
+        System.out.println("Використання екземпляра класу One в методі otherClassMethod класу Three:");
+        System.out.println("Значення змінної variable1 у екземпляра класу One: " + otherInstance.variable1);
+    }
+
+    public void dynamicArgumentsMethod(String... args) {
+        // Використання параметрів динамічної довжини
+        System.out.println("dynamicArgumentsMethod в класі Three:");
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        One oneInstance = new One(1.5, 10, 2.3);
+        Two twoInstance = new Two(5, 3.7, 8);
+        Three threeInstance = new Three(4.2, 15, 6.8);
+
+        oneInstance.voidMethod();
+        double result1 = oneInstance.typedMethod(5);
+        System.out.println("Результат typedMethod в класі One: " + result1);
+        oneInstance.otherClassMethod(twoInstance);
+        oneInstance.dynamicArgumentsMethod("Hello", "World");
+
+        System.out.println();
+
+        twoInstance.voidMethod();
+        int result2 = twoInstance.typedMethod(3.5);
+        System.out.println("Результат typedMethod в класі Two: " + result2);
+        twoInstance.otherClassMethod(threeInstance);
+        twoInstance.dynamicArgumentsMethod(1, 2, 3, 4, 5);
+
+        System.out.println();
+
+        threeInstance.voidMethod();
+        int result3 = threeInstance.typedMethod(2.7);
+        System.out.println("Результат typedMethod в класі Three: " + result3);
+        threeInstance.otherClassMethod(oneInstance);
+        threeInstance.dynamicArgumentsMethod("Hello", "World", "Java");
+    }
+}
+
+
+2)public class MainClass {
+    public static void main(String[] args) {
+        One oneInstance = new One(1.5, 10, 2.3);
+        Two twoInstance = new Two(5, 3.7, 8);
+        Three threeInstance = new Three(4.2, 15, 6.8);
+
+        oneInstance.voidMethod();
+        double result1 = oneInstance.typedMethod(5);
+        System.out.println("Результат typedMethod в класі One: " + result1);
+        oneInstance.otherClassMethod(twoInstance);
+        oneInstance.dynamicArgumentsMethod("Hello", "World");
+
+        System.out.println();
+
+        twoInstance.voidMethod();
+        int result2 = twoInstance.typedMethod(3.5);
+        System.out.println("Результат typedMethod в класі Two: " + result2);
+        twoInstance.otherClassMethod(threeInstance);
+        twoInstance.dynamicArgumentsMethod(1, 2, 3, 4, 5);
+
+        System.out.println();
+
+        threeInstance.voidMethod();
+        int result3 = threeInstance.typedMethod(2.7);
+        System.out.println("Результат typedMethod в класі Three: " + result3);
+        threeInstance.otherClassMethod(oneInstance);
+        threeInstance.dynamicArgumentsMethod("Hello", "World", "Java");
+    }
+}
