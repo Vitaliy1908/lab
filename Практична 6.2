@@ -1,0 +1,108 @@
+1)package myPackage;
+
+public class One {
+    // Код для класу One
+}
+
+public class Two {
+    // Код для класу Two
+}
+
+public class Three {
+    // Код для класу Three
+}
+
+
+2)public class One {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    // Додатковий код для класу One
+}
+
+public class Two {
+    private int variable1;
+    private double variable2;
+    private int variable3;
+
+    // Додатковий код для класу Two
+}
+
+public class Three {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    // Додатковий код для класу Three
+}
+
+3) public class One {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public One(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    // Додатковий код для класу One
+}
+
+public class Two {
+    private int variable1;
+    private double variable2;
+    private int variable3;
+
+    public Two(int variable1, double variable2, int variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    // Додатковий код для класу Two
+}
+
+public class Three {
+    private double variable1;
+    private int variable2;
+    private double variable3;
+
+    public Three(double variable1, int variable2, double variable3) {
+        this.variable1 = variable1;
+        this.variable2 = variable2;
+        this.variable3 = variable3;
+    }
+
+    // Додатковий код для класу Three
+}
+
+4)public class MainClass {
+    public static void main(String[] args) {
+        One oneInstance = new One(1.5, 10, 2.3);
+        Two twoInstance = new Two(5, 3.7, 8);
+        Three threeInstance = new Three(4.2, 15, 6.8);
+
+        // Використання створених екземплярів
+        System.out.println("Значення змінних екземпляра oneInstance:");
+        System.out.println("variable1: " + oneInstance.variable1);
+        System.out.println("variable2: " + oneInstance.variable2);
+        System.out.println("variable3: " + oneInstance.variable3);
+
+        System.out.println();
+
+        System.out.println("Значення змінних екземпляра twoInstance:");
+        System.out.println("variable1: " + twoInstance.variable1);
+        System.out.println("variable2: " + twoInstance.variable2);
+        System.out.println("variable3: " + twoInstance.variable3);
+
+        System.out.println();
+
+        System.out.println("Значення змінних екземпляра threeInstance:");
+        System.out.println("variable1: " + threeInstance.variable1);
+        System.out.println("variable2: " + threeInstance.variable2);
+        System.out.println("variable3: " + threeInstance.variable3);
+    }
+}
